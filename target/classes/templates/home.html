@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>DELIVERY - NTTDATA</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
+  <body class="card-body">
+    <div class="card text-white bg-dark mb-3">
+      <div class="card-header">Nuevo Pedido</div>
+      <div class="card-body">
+        <form th:action="@{./addDelivery}" th:object="${hotelV}" method="POST">
+          <div class="form-group">
+            <label for="inpDeliveryIdentifier">Identificador Pedido</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              id="inpDeliveryIdentifier"
+              name="deliveryIdentifier"
+            />
+            <label for="inpDeliveryAddresse">Destinatario Pedido</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              id="inpDeliveryAddresse"
+              name="deliveryAddressee"
+            />
+            <label for="inpDeliveryAddress">Direccion Entrega Pedido</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              id="inpDeliveryAddress"
+              name="deliveryAddress"
+            />
+            <label for="inpDeliveryCityIdentifier">Ciudad Pedido</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              id="inpDeliveryCityIdentifier"
+              name="deliveryCityIdentifier"
+            />
+          </div>
+          <button type="submit" name="btnSaveDelivery" class="btn btn-success">
+            Añadir
+          </button>
+        </form>
+      </div>
+      <div class="card-header">Nuevo Producto</div>
+      <div class="card-body">
+        <form th:action="@{./addProduct}" th:object="${personV}" method="POST">
+          <div class="form-group">
+            <label for="inpProductIdentifier">Identificador Producto</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              id="inpProductIdentifier"
+              name="productIdentifier"
+            />
+            <label for="inpProductName">Nombre Producto</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              id="inpProductName"
+              name="productName"
+            />
+            <label for="inpProductPriceWithoutTaxes">Precio Sin Impuestos</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              id="inpProductPriceWithoutTaxes"
+              name="productPriceWithoutTaxes"
+            />
+            <label for="inpDelivery">Pedido Id</label>
+            <input
+              type="text"
+              required="required"
+              class="form-control"
+              id="inpDelivery"
+              name="delivery"
+            />
+          </div>
+          <button type="submit" name="btnSaveProduct" class="btn btn-success">
+            Añadir
+          </button>
+        </form>
+      </div>
+      <a href="./showPrices"><button name="ShowPrices"
+				class="btn btn-success">Mostrar Precio Total</button></a>
+    </div>
+  </body>
+</html>
